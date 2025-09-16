@@ -1,7 +1,7 @@
-import React, { memo } from 'react';
+import { memo, ReactNode } from 'react';
 
 interface FeatureCardProps {
-    icon: React.ReactNode;
+    icon: ReactNode;
     title: string;
     description: string;
 }

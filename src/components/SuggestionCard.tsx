@@ -1,4 +1,4 @@
-import React, { memo } from 'react';
+import { memo, FC } from 'react';
 import type { Suggestion } from '../types';
 import { ArrowUpRightIcon, SparklesIcon } from './icons';
 
@@ -23,7 +23,7 @@ const cardConfig = {
     },
 };
 
-export const SuggestionCard: React.FC<SuggestionCardProps> = memo(({ title, item, onSearch }) => {
+export const SuggestionCard: FC<SuggestionCardProps> = memo(({ title, item, onSearch }) => {
     if (!item || !item.productName) return null;
     const config = cardConfig[title];
     return (

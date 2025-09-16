@@ -1,4 +1,4 @@
-import React, { useState, memo } from 'react';
+import { useState, memo, FC } from 'react';
 import type { UltraScore, Nutrients } from '../types';
 import { SuggestionCard } from './SuggestionCard';
 import { StarIcon } from './icons';
@@ -9,7 +9,7 @@ interface ScoreDisplayProps {
     onSearch: (term: string, image?: string) => void;
 }
 
-const AdjustmentRow: React.FC<{ adj: { reason: string; points: number } }> = ({ adj }) => (
+const AdjustmentRow: FC<{ adj: { reason: string; points: number } }> = ({ adj }) => (
     <div className="flex justify-between items-center py-2 border-b border-slate-200 last:border-b-0">
         <span className="text-sm text-slate-600">{adj.reason}</span>
         <span className={`text-sm font-bold ${adj.points >= 0 ? 'text-green-600' : 'text-red-600'}`}>
@@ -18,14 +18,14 @@ const AdjustmentRow: React.FC<{ adj: { reason: string; points: number } }> = ({ 
     </div>
 );
 
-const Macro: React.FC<{ label: string; value: number | undefined; unit: string }> = ({ label, value, unit }) => (
+const Macro: FC<{ label: string; value: number | undefined; unit: string }> = ({ label, value, unit }) => (
     <div className="text-center">
         <p className="text-xs text-slate-500">{label}</p>
         <p className="font-bold text-slate-700">{value !== undefined ? Math.round(value) : '0'}{unit}</p>
     </div>
 );
 
-const NutritionInfo: React.FC<{ data: Nutrients | null }> = ({ data }) => {
+const NutritionInfo: FC<{ data: Nutrients | null }> = ({ data }) => {
     if (!data) return null;
     return (
         <div className="w-full mt-4">
@@ -42,7 +42,7 @@ const NutritionInfo: React.FC<{ data: Nutrients | null }> = ({ data }) => {
     );
 };
 
-export const ScoreDisplay: React.FC<ScoreDisplayProps> = memo(({ scoreData, onReset, onSearch }) => {
+export const ScoreDisplay: FC<ScoreDisplayProps> = memo(({ scoreData, onReset, onSearch }) => {
     const { finalScore, trustScore, category, productName, breakdown, healthierAddon, topInCategory, nutrients, overrideReason, isBestInClass } = scoreData;
     const [isExpanded, setIsExpanded] = useState(false);
     const handleSuggestionSearch = (newTerm: string) => onSearch(newTerm);

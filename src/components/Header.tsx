@@ -1,4 +1,4 @@
-import React, { memo } from 'react';
+import { memo } from 'react';
 
 export const Header = memo(() => (
     <header className="absolute top-0 left-0 right-0 z-20">

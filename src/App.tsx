@@ -1,4 +1,4 @@
-import React, { useState, useRef, useCallback } from 'react';
+import { useState, useRef, useCallback } from 'react';
 import { Header } from './components/Header';
 import { GrainyAuroraBackground } from './components/GrainyAuroraBackground';
 import { SearchBar } from './components/SearchBar';
