@@ -1,0 +1,7 @@
+{
+  "name": "ULTRASCORE - AI Product Analyzer",
+  "description": "An AI-powered application to analyze and score consumer products for health and well-being. Scan or search for any product to get an instant, data-driven analysis and healthier alternatives.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
